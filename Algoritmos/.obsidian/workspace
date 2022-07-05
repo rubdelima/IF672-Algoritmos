@@ -1,0 +1,95 @@
+{
+  "main": {
+    "id": "43df1da5cbdfb197",
+    "type": "split",
+    "children": [
+      {
+        "id": "61f67d96df7dcca0",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Aula #03/Aula3.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b4ded574082c45cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "ce17a8c025c95817",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "289951d14e84cece",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "b09a8ba10865b3dc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fdab98c8d4e9b618",
+    "type": "split",
+    "children": [
+      {
+        "id": "d78ab5761596152e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4df051c124caa9d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Aula #03/Aula3.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "61f67d96df7dcca0",
+  "lastOpenFiles": [
+    "Aula #03/Aula3.md",
+    "Aula #01/# Aula 1.md",
+    "Sem título.md"
+  ]
+}
