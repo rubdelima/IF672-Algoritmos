@@ -41,10 +41,6 @@ def convert_lista(lista):
     return lista
     
     
-#n_casos = int(input())
-#for i in range(n_casos):
-#    tam_lista = int(input())
-#    lista = input().split(' ')
-#    lista = convert_lista(lista)
-#    lista = mergesort(lista, tam_lista)
-#    print(*lista)
+lista = [3,45,65,9,8,114,2,1,0,3,3,99,4,3,3,45,6,47,9]
+lista = mergesort(lista, len(lista))
+print(*lista)
