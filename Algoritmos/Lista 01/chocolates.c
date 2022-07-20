@@ -4,7 +4,7 @@
 void merge(int vetor[], int ini_p1, int fim_p1, int ini_p2, int fim_p2){ //função para integrar
     // vetor auxiliar com alocação dinâmica
     int *vet_temp;
-    vet_temp = (int*)malloc(((fim_p1 - ini_p1) + (fim_p2 - ini_p2))*sizeof(int));
+    vet_temp = (int*)malloc(((fim_p1 - ini_p1) + (fim_p2 - ini_p2)+2)*sizeof(int));
 
     // contadores
     int i, j, k;
@@ -31,7 +31,6 @@ void merge(int vetor[], int ini_p1, int fim_p1, int ini_p2, int fim_p2){ //funç
         vetor[i] = vet_temp[j];
     }
     free(vet_temp);
-    *vet_temp = NULL;
 }
 
 void mergesort(int vetor[], int inicio, int fim){ //função para dividir
@@ -49,33 +48,36 @@ void mergesort(int vetor[], int inicio, int fim){ //função para dividir
     }
 }
 
+long long int soma_array(int array[], int tam_array){
+    long long int soma = 0, valor_desc;
+    for (int i = 0; i < tam_array; i++){
+        soma = soma + array[i];
+    }
+    return soma;
+}
+
 
 int main(){
     // entrada da quantidade de casos
-    int numero_de_casos;
-    scanf("%d",&numero_de_casos);
-
-    // Laço com a quantidade de casos
-    for (int caso=0; caso<numero_de_casos; caso++) {
-        // identificar tamanho do array
-        int tam_array;
-        scanf("%d" ,&tam_array);
-        int array[tam_array];
-
-        // laco para instrir os valores no array
+    int tam_array;
+    scanf("%d",&tam_array);
+    int *array;
+    array = (int*)malloc((tam_array)*sizeof(int));
+    // laco para instrir os valores no array
         for (int j=0; j<tam_array; j++){
             scanf("%d" ,&array[j]);}
 
-        // função do mergesort
-        mergesort(array, 0, tam_array-1);
-
-        // laço para imrimir o array
-        for (int i=0; i < tam_array; i++) {
-            printf("%d ", array[i]);
-        }
-        printf("\n");
-        
+    // função do mergesort
+    mergesort(array, 0, tam_array-1);
+    // Cupons
+    long long int total = soma_array(array, tam_array);
+    int qnt_cupons;
+    scanf("%d" ,&qnt_cupons);
+    for (int i=0; i<qnt_cupons; i++){
+        int cupom;
+        scanf("%d" ,&cupom);
+        printf("%lld\n", total - array[tam_array - cupom]);
     }
-
+    free(array);
     return 0;
 }

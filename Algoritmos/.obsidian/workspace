@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Aula #03/Aula3.md",
+            "file": "Aula #6/M4 - Resumo.md",
             "mode": "source"
           }
         }
@@ -52,7 +52,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fdab98c8d4e9b618",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Aula #03/Aula3.md",
+                "file": "Aula #6/M4 - Resumo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,6 +89,10 @@
   },
   "active": "61f67d96df7dcca0",
   "lastOpenFiles": [
+    "Aula #6/M4 - Resumo.md",
+    "Aula 2.md",
+    "Aula 1.md",
+    "Aula.md",
     "Aula #03/Aula3.md",
     "Aula #01/# Aula 1.md",
     "Sem título.md"
