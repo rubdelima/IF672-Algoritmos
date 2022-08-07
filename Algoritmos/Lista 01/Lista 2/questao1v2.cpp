@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <cstring>
 using namespace std;
 
     /*
@@ -16,24 +18,24 @@ using namespace std;
 // delete apontador
 void ExibirMenu()
 {
-    cout << "\n[1] - Inserir no inicio da lista\n";
-    cout << "[2] - Inserir no fim da lista\n";
-    cout << "[3] - Inserir por posicao\n";
-    cout << "[4] - Imprimir lista\n";
-    cout << "[5] - Remover no inicio da lista\n";
-    cout << "[6] - Remover no fim da lista\n";
-    cout << "[7] - Remover por posicao\n";
+    std::cout << "\n[1] - Inserir no inicio da lista\n";
+    std::cout << "[2] - Inserir no fim da lista\n";
+    std::cout << "[3] - Inserir por posicao\n";
+    std::cout << "[4] - Imprimir lista\n";
+    std::cout << "[5] - Remover no inicio da lista\n";
+    std::cout << "[6] - Remover no fim da lista\n";
+    std::cout << "[7] - Remover por posicao\n";
 }
 
 struct noLista
 {
-    int      dado;
+    char      dado;
     noLista *prox;
 };
 
 noLista *inicializar() { return NULL; }
 
-void inserirInicio(noLista *&l, int info)
+void inserirInicio(noLista *&l, char info)
 {
     noLista *novo = new noLista;
     novo->dado    = info;
@@ -56,7 +58,7 @@ bool RemoveInicio(noLista *&ApontadorInicioLista)
     }
 }
 
-void inserirFim(noLista *&l, int info)
+void inserirFim(noLista *&l, char info)
 {
     noLista *novo = new noLista;
     novo->dado    = info;
@@ -96,7 +98,7 @@ void imprimir(noLista *l)
 {
     while (l != NULL)
     {
-        cout << l->dado << "\n";
+        std::cout << l->dado;
         l = l->prox;
     }
 }
@@ -112,7 +114,7 @@ int tamanho(noLista *l)
     return cont;
 }
 
-bool inserir_posicao(noLista *&l, int info, int pos)
+bool inserir_posicao(noLista *&l, char info, int pos)
 {
     int tam = tamanho(l);
     if (pos > tam + 1) { return false; }
@@ -180,84 +182,34 @@ bool RemovePosicao(noLista *&ApontadorInicioLista, int Posicao)
     }
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     noLista *l1 = inicializar();
-    int      Terminar, opcao, valor, posicao;
-    do {
-        ExibirMenu();
-        cout << "\nDigite uma opcao : ";
-        cin >> opcao;
-        switch (opcao)
-        {
-            case 1:
-                cout << "\nQual valor a ser inserido ? ";
-                cin >> valor;
-                inserirInicio(l1, valor);
-                cout << "\nOperacao realizada com sucesso ! \n";
-                break;
-            case 2:
-                cout << "\nQual valor a ser inserido ? ";
-                cin >> valor;
-                inserirFim(l1, valor);
-                cout << "\nOperacao realizada com sucesso ! \n";
-                break;
-            case 3:
-                cout << "\nQual valor a ser inserido ? ";
-                cin >> valor;
-                cout << "\nEm qual posicao ? ";
-                cin >> posicao;
-                if (inserir_posicao(l1, valor, posicao))
-                {
-                    cout << "\nOperacao realizada com sucesso ! \n";
-                }
-                else
-                {
-                    cout << "\nPosicao invalida ! \n";
-                }
-                break;
-            case 4:
-                cout << "\nAbaixo estao os elementos da lista \n\n";
-                imprimir(l1);
-                break;
-            case 5:
-                if (RemoveInicio(l1))
-                {
-                    cout << "\nOperacao realizada com sucesso ! \n";
-                }
-                else
-                {
-                    cout << "\nLista vazia, impossivel realizar "
-                            "operacao ! \n";
-                }
-                break;
-            case 6:
-                if (RemoveFim(l1))
-                {
-                    cout << "\nOperacao realizada com sucesso ! \n";
-                }
-                else
-                {
-                    cout << "\nLista vazia, impossivel realizar "
-                            "operacao ! \n";
-                }
-                break;
-            case 7:
-                cout << "\nQual a posicao que voce deseja excluir ? ";
-                cin >> posicao;
-                if (RemovePosicao(l1, posicao))
-                {
-                    cout << "\nOperacao realizada com sucesso ! \n";
-                }
-                else
-                {
-                    cout << "\nPosicao invalida ! \n";
-                }
+    bool append = true;
+    int cursor = 1;
+    char car;
+    bool laco = true;
+    while(cin >> car){
+        if (car == '['){
+        append = false;
         }
-
-        cout << "\n\
-Deseja encerrar as operacoes com a lista ? Digite [0] para encerrar : ";
-        cin >> Terminar;
-
-    } while (Terminar != 0);
+        if (car == ']'){
+        append = true;
+        }
+        if (car == '\n'){
+            imprimir(l1);
+            std::cout << '\n';
+            noLista *l1 = inicializar();
+            cursor = 1;
+        } else if (append && car != ']' && car != '['){
+          inserirFim(l1, car);
+        }else if (car != ']' && car != '['){
+          inserir_posicao(l1, car, cursor);
+          cursor++;
+        }
+        imprimir(l1);
+    }
+    imprimir(l1);
+    std::cout << '\n';
+    return 0;
 }

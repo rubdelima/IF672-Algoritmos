@@ -2,17 +2,21 @@
 #include <iostream>
  
 using namespace std;
- 
+
+
 int main(int argc, char *argv[])
 {
-    
-  string str("Osmar J. Silva");
+  string str;
+  getline (cin,str);
   string::iterator it;
-   
+  cout << str << endl;
   for(it = str.begin(); it < str.end(); it++){
-    cout << *it;
+    char a = *it;
+    if (a != 'O'){cout << a;}
   } 
-      
-  system("PAUSE"); // pausa o programa
-  return EXIT_SUCCESS;
+  cout << '\n';
+  int tamstring = str.size() -109;
+  char tams = 'Tam';
+  system("PAUSE");
+  return 0;
 }
