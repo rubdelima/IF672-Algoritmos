@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Aula #10 - Dicionários/Dicionários.md",
+            "file": "Mapas/Mapa 9.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fdab98c8d4e9b618",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Aula #10 - Dicionários/Dicionários.md",
+                "file": "Mapas/Mapa 9.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +90,15 @@
   },
   "active": "61f67d96df7dcca0",
   "lastOpenFiles": [
-    "Aula #10 - Dicionários/Sem título.md",
+    "Mapas/Mapa 8.md",
     "Aula #10 - Dicionários/Dicionários.md",
+    "Aula #10 - Dicionários/Sem título.md",
     "Aula #9 - Pilhas e Filas/Pilhas e Filhas.md",
     "Aula #6/M4 - Resumo.md",
     "Aula #8/M5 - Fundamental Data Structures.md",
     "Aula 2.md",
     "Aula 1.md",
     "Aula.md",
-    "Aula #03/Aula3.md",
-    "Aula #01/# Aula 1.md"
+    "Aula #03/Aula3.md"
   ]
 }
