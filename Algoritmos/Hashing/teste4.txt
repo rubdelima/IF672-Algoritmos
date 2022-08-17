@@ -1,0 +1,15 @@
+2
+6
+DEL:cortinas
+ADD:cortinas
+DEL:brusque
+ADD:palmeiras
+ADD:avai
+ADD:goias
+6
+DEL:cortinas
+ADD:cortinas
+DEL:brusque
+ADD:palmeiras
+ADD:avai
+ADD:goias

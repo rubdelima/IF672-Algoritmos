@@ -92,6 +92,7 @@ public:
             return false;
         }
 
+
 };
 
 
@@ -99,80 +100,48 @@ template<typename T>
 
 class HashNode{
     public:
-        Lista<T> element;
-        HashNode * next;
+        Lista<T> *element;
+        HashNode<T> *next_hash;
         int key;
 
-        HashNode(const Lista<T>& elemento, int chave, HashNode* nexthash = NULL){
-                element = elemento;
-                next = nexthash;
-                key = chave;
-
+        int key;
+        HashNode(int chave, const T& elemento, HashNode* nextno = NULL) {
+            element = elemento;
+            next_hash = nextno;
+            key = chave;
         }
 
-        HashNode(int chave, HashNode* nexthash = NULL){
-            next = nexthash;
+        HashNode(int chave, No* nextno = NULL){
+            next_hash = nextno;
             key = chave;
         }
     private:
-        void inserthash(int elemento){
-            element.insert_end();
-            element.insert(elemento);
+
+        addhash(const T& item){
+            element.insert(item);
         }
-        void removehash(int elemento){
-            element.removeitem(elemento);
-        }
-        void errasehash(){
-            element.eraselist();
-        }
-        void printhash(){
-            cout << key << ":";
-            element.printlist();
+        removehash(const T& item){
+            element.removeitem(item);
         }
 };
 
 template<typename T>
 
 class HashTable{
-    public:
-        Lista<T> lista_keys;
-        HashNode<T> * head;
-        HashNode<T> * tail;
-        HashNode<T> * curr;
-        int tamanho;
     private:
-        void inserthash(int chave, T element){
-            if (lista_keys.inlist(chave)){
-                printf("Está na lista");
-            } else{
-                lista_keys.insert(new HashNode<T>(element, chave));
-            }
+        HashNode<T> *prim;
+        HashNode<T> *ulti; 
+        HashNode<T> *atual;
+
+    public:
+        Lista(){ 
+            atual = ulti = prim = new HashNode<T>;
         }
 
-
-
-
-
-};
-        
-
-        
-
-
-int main(){
-
-    Lista<int> lista;
-    lista.insert(1);
-    lista.printlist();
-    Lista<char> lista_char;
-    lista_char.insert('r');
-    lista_char.printlist();
-    Lista<string> lista_str;
-    lista_str.insert("Ola meu nome é Carlos\n\nSalve");
-    lista_str.printlist();
-
-
-    
-
-    return 0;
+        void insert(const T& element){
+            atual->next_hash = new HashNode<T>(element, atual->next_hash);
+            if (ulti == atual){
+                ulti = atual->next_hash;
+            }
 }
+};

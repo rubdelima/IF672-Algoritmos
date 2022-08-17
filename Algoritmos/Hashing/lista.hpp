@@ -1,14 +1,19 @@
+#ifndef _lista_hpp_
+#define _lista_hpp_
+
 #include<iostream>
 #include<cstdio>
 
 using namespace std;
 
+template<class T>
+
 class No {
     public:
-        char element;
+        T element;
         No *next;
 
-        No(const char& elemento, No* nextno = NULL) {
+        No(const T& elemento, No* nextno = NULL) {
             element = elemento;
             next = nextno;
         }
@@ -18,19 +23,21 @@ class No {
         }
 };
 
+template<class T>
+
 class Lista {
     private:
-        No *head; // Cabeça ou inicio do ponteiro
-        No *tail; // Cauda/ fim do ponteiro
-        No *curr;// Cursor, onde o ponteiro está atualmente
+        No<T> *head; // Cabeça ou inicio do ponteiro
+        No<T> *tail; // Cauda/ fim do ponteiro
+        No<T> *curr;// Cursor, onde o ponteiro está atualmente
         int listam;
-    public:
+public:
         Lista(){ 
-            curr = tail = head = new No;
+            curr = tail = head = new No<T>;
             listam = 0;
         }
 
-        void insert(const char& element){
+        void insert(const T& element){
             curr->next = new No(element, curr->next);
             if (tail == curr){
                 tail = curr->next;
@@ -61,29 +68,9 @@ class Lista {
                 head = head->next;
                 delete curr;
             }
-            curr = head = tail = new No;
+            curr = head = tail = new No<T>;
             listam = 0;
         }
 
 };
-
-int main(){
-    char a;
-    Lista lista;
-    while(scanf("%c",&a) != EOF){      
-            if(a == '['){
-                lista.insert_ini();
-            } else if (a == ']'){
-                lista.insert_end();
-            } else if (a == '\n'){
-                lista.printlist();
-                lista.eraselist();
-            }else {
-                lista.insert(a);
-                lista.next();
-            }
-        
-    }
-    return 0;
-}
-
+#endif // !_lista_hpp_
